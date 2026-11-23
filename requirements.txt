@@ -1,0 +1,5 @@
+yt-dlp
+rapidfuzz
+playwright
+python-dotenv
+# faster-whisper  # STT 필요할 때만 설치

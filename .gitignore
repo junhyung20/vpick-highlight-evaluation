@@ -1,0 +1,7 @@
+data/raw/
+*.wav
+*.mp4
+__pycache__/
+.venv/
+.env
+.ipynb_checkpoints/
