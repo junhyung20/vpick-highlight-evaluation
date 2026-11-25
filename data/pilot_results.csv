@@ -1,13 +1,13 @@
-﻿롱폼 ID,숏폼 ID,채널명,장르,링크 출처,정답 시작(ms),정답 끝(ms),텍스트 유사도,길이 비율,사람 판정,채택,담당자,메모
-AioWj5i-mhg,D-o-O9B0FBk,권또또 KWONTTOTTO,예능/토크,관련 동영상,111100,190492,73.5,0.651,미검수,,이민지,https://youtu.be/AioWj5i-mhg?t=111
-AioWj5i-mhg,Khi8Ry_45z0,권또또 KWONTTOTTO,예능/토크,관련 동영상,2135114,2167014,83.2,0.997,미검수,,,https://youtu.be/AioWj5i-mhg?t=2135
-AioWj5i-mhg,88RngSOgWGY,권또또 KWONTTOTTO,예능/토크,관련 동영상,2690320,2720121,87.7,0.903,미검수,,,https://youtu.be/AioWj5i-mhg?t=2690
-AioWj5i-mhg,Aa5aNUfoyUw,권또또 KWONTTOTTO,예능/토크,관련 동영상,622798,646898,88.5,1.148,미검수,,,https://youtu.be/AioWj5i-mhg?t=622
-https://www.youtube.com/watch?v=4KYqNmt6MQA,https://www.youtube.com/shorts/GoS0vl5Y7Wg,TEO 테오,예능/토크,관련 동영상,,,,,미검수,X,,에러: 롱폼 자막 없음
-https://www.youtube.com/watch?v=4KYqNmt6MQA,https://www.youtube.com/shorts/xj-iBSKFK54,TEO 테오,예능/토크,관련 동영상,,,,,미검수,X,,에러: 롱폼 자막 없음
-JxevjFLWrU0,Zl-ljedHXhw,지새기의 인간극장,브이로그/일상,관련 동영상,249480,349560,15.8,1.191,미검수,,,https://youtu.be/JxevjFLWrU0?t=249
-fnCLQYDK1AA,TEv6wPsRfDI,지새기의 인간극장,브이로그/일상,관련 동영상,1477080,1598320,16.8,1.443,미검수,,,https://youtu.be/fnCLQYDK1AA?t=1477
-https://www.youtube.com/watch?v=hVAVYZb-yUg,https://www.youtube.com/shorts/Y__jEY47yUw,혜안,게임,관련 동영상,,,,,미검수,X,,에러: 숏폼 자막 없음
-TYKbkqiGWQc,-tdTl0Gy7MM,혜안,게임,관련 동영상,507597,656098,84.7,1.388,미검수,,,https://youtu.be/TYKbkqiGWQc?t=507
-vzYAA-pL9B0,aZ-BZuFICCA,지식인사이드,인터뷰/대담,관련 동영상,1246505,1285305,46.1,0.719,미검수,,,https://youtu.be/vzYAA-pL9B0?t=1246
-OyCyr_oJQqw,G_FQJqVcPVY,지식인사이드,인터뷰/대담,관련 동영상,2429680,2523160,61.4,1.169,미검수,,,https://youtu.be/OyCyr_oJQqw?t=2429
+﻿롱폼 ID,숏폼 ID,채널명,장르,링크 출처,정답 시작(ms),정답 끝(ms),텍스트 유사도,길이 비율,사람 판정,채택,담당자,메모,구간 수,문장 커버리지,구간 목록(ms)
+AioWj5i-mhg,D-o-O9B0FBk,권또또 KWONTTOTTO,예능/토크,관련 동영상,111100,190492,73.5,0.651,미검수,,이민지,https://youtu.be/AioWj5i-mhg?t=111,2,1.0,95400-187392 | 284894-330194
+AioWj5i-mhg,Khi8Ry_45z0,권또또 KWONTTOTTO,예능/토크,관련 동영상,2135114,2167014,83.2,0.997,미검수,,,https://youtu.be/AioWj5i-mhg?t=2135,2,1.0,2135114-2167014 | 2123814-2127514
+AioWj5i-mhg,88RngSOgWGY,권또또 KWONTTOTTO,예능/토크,관련 동영상,2690320,2720121,87.7,0.903,미검수,,,https://youtu.be/AioWj5i-mhg?t=2690,1,1.0,2690320-2716221
+AioWj5i-mhg,Aa5aNUfoyUw,권또또 KWONTTOTTO,예능/토크,관련 동영상,622798,646898,88.5,1.148,미검수,,,https://youtu.be/AioWj5i-mhg?t=622,1,1.0,622798-646898
+4KYqNmt6MQA,GoS0vl5Y7Wg,TEO 테오,예능/토크,관련 동영상,968074,1018886,31.5,0.959,미검수,,,https://youtu.be/4KYqNmt6MQA?t=968,0,0.0,
+4KYqNmt6MQA,xj-iBSKFK54,TEO 테오,예능/토크,관련 동영상,1673909,1752710,83.6,1.023,미검수,,,https://youtu.be/4KYqNmt6MQA?t=1673,1,0.944,1673909-1752710
+JxevjFLWrU0,Zl-ljedHXhw,지새기의 인간극장,브이로그/일상,관련 동영상,249480,349560,15.8,1.191,미검수,,,https://youtu.be/JxevjFLWrU0?t=249,0,0.0,
+fnCLQYDK1AA,TEv6wPsRfDI,지새기의 인간극장,브이로그/일상,관련 동영상,1477080,1598320,16.8,1.443,미검수,,,https://youtu.be/fnCLQYDK1AA?t=1477,0,0.0,
+https://www.youtube.com/watch?v=hVAVYZb-yUg,https://www.youtube.com/shorts/Y__jEY47yUw,혜안,게임,관련 동영상,,,,,미검수,X,,에러: 숏폼 자막 없음,,,
+TYKbkqiGWQc,-tdTl0Gy7MM,혜안,게임,관련 동영상,507597,656098,84.7,1.388,미검수,,,https://youtu.be/TYKbkqiGWQc?t=507,5,1.0,3000-9500 | 516197-527297 | 10100-22000 | 541797-604997 | 624898-656098
+vzYAA-pL9B0,aZ-BZuFICCA,지식인사이드,인터뷰/대담,관련 동영상,1246505,1285305,46.1,0.719,미검수,,,https://youtu.be/vzYAA-pL9B0?t=1246,4,0.918,974101-980702 | 936701-943101 | 800199-807099 | 1267805-1285305
+OyCyr_oJQqw,G_FQJqVcPVY,지식인사이드,인터뷰/대담,관련 동영상,2429680,2523160,61.4,1.169,미검수,,,https://youtu.be/OyCyr_oJQqw?t=2429,3,0.908,1062000-1108000 | 2435040-2472680 | 2499760-2523160
