@@ -1,67 +1,58 @@
-# vpick-highlight-evaluation
+# Vpick 숏폼 하이라이트 품질 평가 체계
 
-유튜브 롱폼-숏폼 페어에서 크리에이터가 잘라낸 구간을 정답으로 삼아, Vpick 베이스라인과 Gemini/Jev 모델이 고른 하이라이트 구간을 IoU 등으로 채점하는 **LLM 기반 숏폼 하이라이트 장면 선택 품질 평가 체계**입니다.
+LLM이 고른 숏폼 하이라이트 장면이 얼마나 좋은지 객관적으로 재는 평가 체계를 만들고,
+이를 이용해 Gemini(생성형)와 Jev(판별형)의 장면 채점 성능을 비교합니다.
 
-데이터 저장 규칙은 [SCHEMA.md](SCHEMA.md)를 먼저 읽어 주세요.
+- 2026 AI P-실무프로젝트 · AI-1분반-4조 (오승근, 이민지, 이준형)
+- 기업 연계: CLOUDIKE × Vpick
 
 ## 폴더 구조
 
+| 폴더 | 내용 |
+|---|---|
+| `src/collect` | 채널에서 롱폼-숏폼 페어 후보 찾기 |
+| `src/match` | 숏폼이 롱폼의 어느 구간인지 찾기 (정답 구간) |
+| `src/vpick` | Vpick 장면 데이터·베이스라인 수집 |
+| `src/eval` | IoU, 적중률, 순위 등 평가 지표 |
+| `src/experiment` | Gemini·Jev 장면 채점 실험 |
+| `data/` | 페어 목록, 매칭 결과, 정답 구간, Vpick 데이터 (저장 형식은 `SCHEMA.md`) |
+| `results/` | 평가 결과 |
+
+## 설치 (Windows)
+
+Git Bash 기준:
+
 ```
-.
-├─ README.md
-├─ SCHEMA.md              # 팀 데이터 저장 규칙
-├─ requirements.txt
-├─ .env.example           # API 키 템플릿 (.env로 복사해서 사용)
-├─ data/
-│  ├─ raw/subs/           # 내려받은 자막·오디오 원본 (git 제외)
-│  ├─ ground_truth.jsonl  # 롱폼-숏폼 정답 구간
-│  └─ vpick/
-│     ├─ scenes/          # Vpick 장면 분석 결과 ({long_id}.json)
-│     └─ baseline/        # Vpick 베이스라인 숏폼 결과 ({long_id}.json)
-├─ src/
-│  ├─ collect/            # 채널·롱폼-숏폼 페어 수집
-│  ├─ match/              # 롱폼-숏폼 구간 매칭 → 정답 구간 생성 (match_one.py)
-│  ├─ vpick/              # Vpick 데이터 수집·변환
-│  ├─ eval/               # IoU 등 평가 지표 계산
-│  └─ experiment/         # Gemini/Jev 모델 하이라이트 선택 실험
-├─ notebooks/             # 분석·시각화용 노트북
-└─ results/               # 평가·실험 결과
-```
-
-## 설치 (Windows, Python 3.10)
-
-저장소 최상위 폴더에서 실행합니다.
-
-```bat
 python -m venv .venv
-.venv\Scripts\activate
+source .venv/Scripts/activate
 pip install -r requirements.txt
 ```
 
-API 키가 필요한 경우 `.env.example`을 `.env`로 복사한 뒤 키를 채워 넣습니다. (`.env`는 git에 올라가지 않습니다.)
+(명령 프롬프트에서는 `.venv\Scripts\activate`)
 
-```bat
-copy .env.example .env
+루트 폴더에 `.env` 파일을 만들고 `GEMINI_API_KEY=본인키`를 적어주세요. (깃에 올리지 않습니다)
+
+## 정답 구간 만들기
+
+모든 명령은 저장소 최상위 폴더에서 실행합니다.
+
+1. 팀 구글 시트 [페어 입력] 탭에 롱폼 URL, 숏폼 URL, 채널명, 장르를 적는다
+   - 쇼츠 제목 아래 ▶ "관련 동영상" 링크나 설명란 풀영상 링크로 원본 롱폼을 찾는다
+   - 롱폼 5분 이상, 채널당 롱폼 5개까지, 한 롱폼에서 쇼츠 2~3개까지
+2. [페어 입력] 탭을 CSV로 다운로드해서 `data/pairs.csv`로 저장한다
+3. 일괄 매칭
+
+```
+python src/match/match_batch.py
 ```
 
-숏폼에 자동 자막이 없어 STT가 필요할 때만 추가로 설치합니다. (ffmpeg 필요)
+4. `data/pilot_results.csv`를 시트 [페어] 탭에 붙여넣고, 메모 칸 링크로 위치가 맞는지 확인해 O/X를 적는다
 
-```bat
-pip install faster-whisper
+페어 하나만 확인할 때:
+
 ```
-
-## 실행
-
-반드시 **저장소 최상위 폴더**에서 실행합니다.
-
-```bat
 python src/match/match_one.py "롱폼URL" "숏폼URL"
 ```
 
-숏폼에 자막이 없을 때:
-
-```bat
-python src/match/match_one.py "롱폼URL" "숏폼URL" --whisper
-```
-
-결과는 화면에 출력되고 `data/ground_truth.jsonl`에 한 줄 추가됩니다.
+참고: `src/collect/find_pairs.py`는 쇼츠 설명란에 풀영상 링크가 있는 채널에서 페어를 자동으로 찾습니다.
+"관련 동영상" 링크는 아직 읽지 못합니다.
