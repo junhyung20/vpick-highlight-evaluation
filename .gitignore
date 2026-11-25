@@ -5,3 +5,5 @@ __pycache__/
 .venv/
 .env
 .ipynb_checkpoints/
+data/pairs_auto.csv
+data/pilot_results.csv
