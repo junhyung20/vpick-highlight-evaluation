@@ -1,10 +1,11 @@
 """
 페어 여러 개를 한꺼번에 매칭 (파일럿용 일괄 실행)
 
-1. data/pairs.csv 를 준비한다.
-   - 구글 시트 [페어 입력] 탭을 CSV로 다운로드해서 data/pairs.csv 로 저장
-     (파일 > 다운로드 > CSV, 제목 줄 "롱폼 URL, 숏폼 URL, 채널명, 장르, 링크 출처, 담당자"를 그대로 읽음)
-   - find_pairs.py 가 만든 파일(영어 제목 줄)도 그대로 읽음
+1. 매칭할 페어 파일을 준비한다.
+   - find_pairs.py 결과를 바로 쓸 때: --pairs data/pairs_auto.csv 옵션으로 실행
+   - 손으로 찾은 페어: data/pairs.csv 에 직접 적기 (첫 줄은 제목 줄 그대로)
+     long_url,short_url,channel,genre,link_source
+     https://www.youtube.com/watch?v=...,https://www.youtube.com/shorts/...,채널명,예능/토크,설명란 링크
 
 2. 저장소 최상위 폴더에서 실행
    python src/match/match_batch.py

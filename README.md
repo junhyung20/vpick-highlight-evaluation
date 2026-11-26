@@ -67,7 +67,7 @@ python src/collect/find_pairs.py --shorts 20 && python src/match/match_batch.py 
 
 ### 기타
 
-- 페어를 손으로 찾았을 때: 시트 [페어 입력] 탭에 적고 CSV로 받아 `data/pairs.csv`로 저장한 뒤 `python src/match/match_batch.py`
+- 페어를 손으로 찾았을 때: `data/pairs.csv`에 직접 적고 `python src/match/match_batch.py` (첫 줄은 제목 줄 `long_url,short_url,channel,genre,link_source`)
 - 페어 하나만 확인: `python src/match/match_one.py "롱폼URL" "숏폼URL"`
 
 ### 알려진 한계

@@ -18,8 +18,7 @@
           --allow-other-channel  관련 동영상이 다른 채널 영상이어도 포함
 
 3. 결과는 data/pairs_auto.csv 에 저장된다 (실행할 때마다 새로 만듦).
-   열 순서가 구글 시트 [페어 입력] 탭과 같아서, 내용을 복사해 시트에 붙여넣으면 된다.
-   그다음 [페어 입력] 탭을 CSV로 받아 data/pairs.csv 로 저장하고 match_batch.py 를 실행.
+   그다음 python src/match/match_batch.py --pairs data/pairs_auto.csv 로 바로 매칭한다.
 """
 import argparse
 import csv
